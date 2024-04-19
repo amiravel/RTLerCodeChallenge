@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \App\Providers\ServicesServiceProvider::class,
+        \App\Providers\RepositoriesServiceProvider::class,
+        \App\Providers\FilterServiceProvider::class,
+        \App\Providers\AdapterServiceProvider::class,
+        \App\Providers\UtilityServiceProvider::class
 
     ],
 

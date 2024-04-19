@@ -7,13 +7,20 @@ use Tests\TestCase;
 
 class ExamTest extends TestCase
 {
+
+    protected function setUp(): void
+    {
+        $this->artisan('db:seed');
+        parent::setUp();
+    }
+
     /**
      * @return void
      */
     public function test_pos_transaction_request()
     {
         $response = $this->postJson(
-            '/api/transaction/pos', 
+            '/api/transaction/pos',
             [
                 'amount' => 10000 // rial
             ]
@@ -33,7 +40,7 @@ class ExamTest extends TestCase
     public function test_web_transaction_request()
     {
         $response = $this->postJson(
-            '/api/transaction/web', 
+            '/api/transaction/web',
             [
                 'amount' => 1000 // toman
             ]
@@ -51,7 +58,7 @@ class ExamTest extends TestCase
     public function test_mobile_transaction_request()
     {
         $response = $this->postJson(
-            '/api/transaction/mobile', 
+            '/api/transaction/mobile',
             [
                 'amount' => 1000 // toman
             ]
